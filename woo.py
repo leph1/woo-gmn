@@ -29,21 +29,21 @@ def high_num_check(message):
 #variables
 low_num = input_number("Set the game parameters, enter the lowest number: ")
 high_num = high_num_check("Now enter the highest number: ")
-my_number = random.randint(low_num,high_num)
-your_number = input_number("Guess my number (hint - it's an integer between "+str(low_num)+" and "+str(high_num)+"): ")
+my_number = random.randint(low_num,high_num) #grab a random number between the two bounds chosen by the user
+your_number = input_number("Guess my number (hint - it's an integer between "+str(low_num)+" and "+str(high_num)+"): ") #Still need to check whether it's an integer as well!
 guess_count = 0
 
 #main game loop
 while your_number != my_number:
     if not low_num <= your_number <= high_num:
-        your_number = int(input("Your guess is out of bounds, Please enter a number between "+str(low_num)+" and "+str(high_num)+"): "))
+        your_number = input_number("Your guess is out of bounds, Please enter a number between "+str(low_num)+" and "+str(high_num)+"): ")
         guess_count +=1
     elif your_number < my_number:
         guess_count +=1
-        your_number = int(input("Your guess is too low, try again: "))
+        your_number = input_number("Your guess is too low, try again: ")
     elif your_number > my_number:
         guess_count +=1
-        your_number = int(input("Your guess is too high, try again: "))
+        your_number = input_number("Your guess is too high, try again: ")
 else:
     guess_count +=1
     print("That's amazing! I really was thinking of the number "+str(my_number))
