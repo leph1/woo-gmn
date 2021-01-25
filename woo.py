@@ -1,7 +1,9 @@
 import random
 
-my_number = random.randint(1,100)
-your_number = int(input("Guess my number (hint - it's an integer between 1 and 100): "))
+low_num = int(input("Set the game parameters, enter the lowest number: "))
+high_num = int(input("Now enter the highest number: "))
+my_number = random.randint(low_num,high_num)
+your_number = int(input("Guess my number (hint - it's an integer between "+str(low_num)+" and "+str(high_num)+": "))
 
 while your_number != my_number:
     if your_number < my_number:
