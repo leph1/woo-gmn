@@ -38,8 +38,8 @@ def guess_game():
 
     while your_number != my_number:
         if not low_num <= your_number <= high_num:
-            your_number = input_number("Your guess is out of bounds, Please enter a number between "+str(low_num)+" and "+str(high_num)+"): ")
             guess_count +=1
+            your_number = input_number("Your guess is out of bounds, Please enter a number between "+str(low_num)+" and "+str(high_num)+") ")
         elif your_number < my_number:
             guess_count +=1
             your_number = input_number("Your guess is too low, try again: ")
@@ -48,7 +48,12 @@ def guess_game():
             your_number = input_number("Your guess is too high, try again: ")
     else:
         guess_count +=1
-        print("That's amazing! I really was thinking of the number "+str(my_number)+"...And it only took you a measly "+str(guess_count)+" guesses!")
+        if guess_count > 1:
+            guess_string = " guesses!"
+        else:
+            guess_string = " guess!"
+        print("That's amazing! I really was thinking of the number "+str(my_number)+"...And it only took you a measly "+str(guess_count)+guess_string)
+
         play_again = input("Would you like to play again? (y/n): ")
         if play_again == 'n':
             print("Thanks for playing, adios!")
