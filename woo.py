@@ -39,7 +39,7 @@ def guess_game():
     while your_number != my_number:
         if not low_num <= your_number <= high_num:
             guess_count +=1
-            your_number = input_number("Your guess is out of bounds, Please enter a number between "+str(low_num)+" and "+str(high_num)+") ")
+            your_number = input_number("Your guess is out of bounds, Please enter a number between "+str(low_num)+" and "+str(high_num)+": ")
         elif your_number < my_number:
             guess_count +=1
             your_number = input_number("Your guess is too low, try again: ")
