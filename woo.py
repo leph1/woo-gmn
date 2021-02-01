@@ -54,8 +54,8 @@ def guess_game():
             guess_string = " guess!"
         print("That's amazing! I really was thinking of the number "+str(my_number)+"...And it only took you a measly "+str(guess_count)+guess_string)
 
-        play_again = input("Would you like to play again? (y/n): ")
-        if play_again == 'n':
+        play_again = input("Type n/N to quit, or anything else to continue playing: ")
+        if play_again.lower() == 'n':
             print("Thanks for playing, adios!")
             return False
         else:
